@@ -1,0 +1,32 @@
+{
+  "name": "Funda Pro",
+  "description": "Chrome Extension that extends interaction experience with Dutch online real estate base Funda.nl",
+  "version": "0.1",
+  "permissions": [
+    "tabs",
+    "storage",
+    "https://www.funda.nl/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.funda.nl/*"],
+      "css": ["style/style.css"],
+      "js": [
+        "library/jquery.min.js",
+        "script/injector.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "style/*.css",
+    "library/*.js",
+    "script/*.js"
+  ],
+  "icons": {
+    "16": "icon/16.png",
+    "48": "icon/48.png",
+    "128": "icon/128.png"
+  },
+  "minimum_chrome_version": "20",
+  "manifest_version": 2
+}
