@@ -39,13 +39,17 @@ $(window).ready(function () {
 	function extendTooltip(data) {
 		var $tooltip = $("#zokPreview .specs");
 
-		$tooltip.append("<span id='fundapro-tooltop-extended'></span>");
-		var $extended = $("#fundapro-tooltop-extended");
+		$("#fundapro-tooltop-extended").remove();
+		var $extended = $tooltip.append("<span id='fundapro-tooltop-extended'></span>");
 
-		var energy = $(data).find(".energielabel-label");
+		$extended.append('Year of construction: ' + $(data).find("#boja12 .specs-val").text() + '<br />');
+
+		var outdoor = $(data).find("#buit12 .specs-val").text();
+		$extended.append(outdoor.length ? outdoor + "<br />" : "");
+
+		$extended.append($(data).find(".energielabel-label"));
+
 		var cadastral = $(data).find(".specs-val:contains('Paid until'),.specs-val:contains('Afgekocht tot'),.specs-val:contains('Full ownership'),.specs-val:contains('Volle eigendom')").text();
-
-		$extended.append(energy);
 		$extended.append(cadastral.length ? cadastral : "No cadastral data found");
 	}
 
