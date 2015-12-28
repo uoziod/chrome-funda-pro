@@ -42,7 +42,8 @@ $(window).ready(function () {
 		$("#fundapro-tooltop-extended").remove();
 		var $extended = $tooltip.append("<span id='fundapro-tooltop-extended'></span>");
 
-		$extended.append('Year of construction: ' + $(data).find("#boja12 .specs-val").text() + '<br />');
+		var jaar = $(data).find(".object-kenmerken-list dt:contains('ouwjaar'):first, .object-kenmerken-list dt:contains('ear of construction'):first, .object-kenmerken-list dt:contains('onstruction period'):first, .object-kenmerken-list dt:contains('ouwperiode'):first").next().text();
+		$extended.append('Year of construction: ' + jaar + '<br />');
 
 		var outdoor = $(data).find("#buit12 .specs-val").text();
 		$extended.append(outdoor.length ? outdoor + "<br />" : "");
