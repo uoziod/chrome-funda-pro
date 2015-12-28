@@ -45,12 +45,12 @@ $(window).ready(function () {
 		var jaar = $(data).find(".object-kenmerken-list dt:contains('ouwjaar'):first, .object-kenmerken-list dt:contains('ear of construction'):first, .object-kenmerken-list dt:contains('onstruction period'):first, .object-kenmerken-list dt:contains('ouwperiode'):first").next().text();
 		$extended.append('Year of construction: ' + jaar + '<br />');
 
-		var outdoor = $(data).find("#buit12 .specs-val").text();
+		var outdoor = $(data).find(".object-kenmerken-list dt:contains('alcony'):first, .object-kenmerken-list dt:contains('alkon'):first").next().text();
 		$extended.append(outdoor.length ? outdoor + "<br />" : "");
 
 		$extended.append($(data).find(".energielabel-label"));
 
-		var cadastral = $(data).find(".specs-val:contains('Paid until'),.specs-val:contains('Afgekocht tot'),.specs-val:contains('Full ownership'),.specs-val:contains('Volle eigendom')").text();
+		var cadastral = $(data).find(".object-kenmerken-list dt:contains('igendomssituatie'):first, .object-kenmerken-list dt:contains('wnership situation'):first").next().text();
 		$extended.append(cadastral.length ? cadastral : "No cadastral data found");
 	}
 

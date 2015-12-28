@@ -1,7 +1,7 @@
 {
   "name": "Funda Pro",
   "description": "Chrome Extension that extends interaction experience with Dutch online real estate base Funda.nl",
-  "version": "0.2",
+  "version": "0.2.1",
   "permissions": [
     "tabs",
     "storage",
